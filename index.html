@@ -1,243 +1,850 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f8f5f1" />
-  <meta name="description" content="Dra. Christiane Calixto — cuidado ginecológico, obstétrico e saúde íntima feminina em Porto Velho." />
-  <title>Dra. Christiane Calixto | Cuidado feminino em todas as fases</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink: #292a28; --muted: #70736d; --cream: #f8f5f1; --paper: #fffefa;
-      --rose: #bd827d; --rose-dark: #98645f; --sage: #89958a; --line: #e9e2dc;
-      --serif: "Playfair Display", Georgia, serif; --sans: "DM Sans", Arial, sans-serif;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
-    a { color: inherit; text-decoration: none; }
-    .wrap { width: min(1160px, calc(100% - 48px)); margin: auto; }
-    .topline { background: #ede7e0; color: #5d625a; text-align: center; padding: 9px 16px; font-size: 11px; letter-spacing: .13em; text-transform: uppercase; }
-    header { position: sticky; top: 0; z-index: 10; background: rgba(255,254,250,.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(233,226,220,.8); }
-    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: flex; flex-direction: column; line-height: 1.05; }
-    .brand strong { font-family: var(--serif); font-size: 22px; font-weight: 600; letter-spacing: .01em; }
-    .brand span { margin-top: 7px; color: var(--rose-dark); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; }
-    .links { display: flex; align-items: center; gap: 30px; font-size: 12px; color: #555951; }
-    .links a:hover { color: var(--rose-dark); }
-    .btn { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--rose); background: var(--rose); color: white; padding: 14px 22px; border-radius: 3px; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; transition: .2s; }
-    .btn:hover { background: var(--rose-dark); border-color: var(--rose-dark); transform: translateY(-1px); }
-    .btn.outline { background: transparent; color: var(--rose-dark); }
-    .btn.outline:hover { background: var(--rose); color: white; }
-    .menu { display: none; border: 0; background: none; font-size: 25px; color: var(--ink); }
-    .hero { background: var(--cream); overflow: hidden; }
-    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; min-height: 650px; align-items: center; gap: 5%; padding-top: 52px; padding-bottom: 52px; }
-    .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--rose-dark); font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
-    .eyebrow:before { content: ""; width: 34px; height: 1px; background: var(--rose); }
-    h1,h2,h3,p { margin-top: 0; }
-    h1 { max-width: 590px; margin: 22px 0; font: 600 clamp(43px, 5.4vw, 70px)/1.08 var(--serif); letter-spacing: -.025em; }
-    h1 em { color: var(--rose-dark); font-weight: 500; }
-    .hero-copy { max-width: 470px; color: var(--muted); font-size: 15px; line-height: 1.9; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-    .micro { margin-top: 28px; color: #85877f; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
-    .hero-art { position: relative; min-height: 520px; display: flex; align-items: center; justify-content: center; }
-    .portrait-frame { position: relative; width: min(420px, 90%); height: 510px; border-radius: 210px 210px 8px 8px; overflow: hidden; background: linear-gradient(145deg,#d8c7bd,#b6a49a 55%,#89958a); box-shadow: 0 28px 70px rgba(74,57,49,.13); }
-    .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
-    .portrait-frame:after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(44,40,36,.18)); pointer-events: none; }
-    .round-note { position: absolute; right: -3%; bottom: 52px; width: 142px; height: 142px; border-radius: 50%; background: var(--paper); border: 1px solid #e8ddd5; display: grid; place-items: center; text-align: center; padding: 20px; color: var(--rose-dark); font-family: var(--serif); font-size: 16px; line-height: 1.25; transform: rotate(7deg); box-shadow: 0 12px 30px #59443a14; }
-    .float-leaf { position: absolute; left: -2%; top: 16%; width: 100px; height: 150px; border: 1px solid #c4b2a7; border-radius: 100% 0 100% 0; transform: rotate(-30deg); opacity: .6; }
-    .trust { border-bottom: 1px solid var(--line); background: #fffefa; }
-    .trust-grid { display: grid; grid-template-columns: repeat(3,1fr); padding: 28px 0; gap: 20px; }
-    .trust-item { text-align: center; color: #666b63; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
-    .trust-item strong { display: block; color: var(--rose-dark); font: 500 20px var(--serif); letter-spacing: 0; text-transform: none; margin-bottom: 5px; }
-    section { padding: 105px 0; }
-    .section-head { max-width: 650px; margin: 0 auto 48px; text-align: center; }
-    .section-head .eyebrow { justify-content: center; }
-    h2 { margin: 16px 0; font: 600 clamp(34px,4vw,48px)/1.15 var(--serif); letter-spacing: -.02em; }
-    .section-head p { color: var(--muted); line-height: 1.8; font-size: 14px; }
-    .about { display: grid; grid-template-columns: .9fr 1.1fr; gap: 9%; align-items: center; }
-    .about-art { min-height: 470px; background: #e9e1d9; position: relative; overflow: hidden; }
-    .about-art img { width: 100%; height: 100%; min-height: 470px; object-fit: cover; display: block; filter: saturate(.78); }
-    .about-art:after { content: ""; position: absolute; inset: 18px; border: 1px solid rgba(255,255,255,.75); pointer-events: none; }
-    .about-copy h2 { margin: 18px 0; }
-    .about-copy p { color: var(--muted); line-height: 1.95; font-size: 14px; }
-    .signature { margin-top: 28px; color: var(--rose-dark); font: italic 24px var(--serif); }
-    .services { background: var(--cream); }
-    .service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-    .service { background: var(--paper); padding: 34px 30px; min-height: 255px; border: 1px solid #eee7e1; transition: .25s; }
-    .service:hover { transform: translateY(-5px); box-shadow: 0 18px 40px #54433810; }
-    .service-no { color: var(--rose); font: 500 14px var(--serif); }
-    .service h3 { margin: 22px 0 12px; font: 600 24px var(--serif); }
-    .service p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
-    .care { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: center; }
-    .care-panel { background: #e9e1d9; padding: 52px; }
-    .care-panel h2 { max-width: 430px; }
-    .care-panel p { color: #62665e; line-height: 1.9; font-size: 14px; }
-    .care-list { list-style: none; padding: 0; margin: 0; }
-    .care-list li { padding: 18px 0; border-bottom: 1px solid var(--line); display: flex; gap: 16px; color: #555b53; font-size: 14px; line-height: 1.6; }
-    .care-list li:before { content: "✳"; color: var(--rose); }
-    .cta { background: #66766b; color: white; text-align: center; padding: 86px 24px; }
-    .cta .eyebrow { color: #e7d6cb; justify-content: center; }
-    .cta .eyebrow:before { background: #d8b8ad; }
-    .cta h2 { max-width: 650px; margin: 18px auto; }
-    .cta p { max-width: 540px; margin: 0 auto 28px; color: #e4e8e1; line-height: 1.8; font-size: 14px; }
-    .cta .btn { background: #f8f5f1; border-color: #f8f5f1; color: #59695e; }
-    .cta .btn:hover { background: white; }
-    .location { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: center; }
-    .location p { color: var(--muted); line-height: 1.8; font-size: 14px; }
-    .map-card { background: #e9e5df; min-height: 300px; display: grid; place-items: center; text-align: center; padding: 30px; color: #66766b; }
-    .map-card span { display: block; font-size: 34px; margin-bottom: 12px; }
-    footer { background: #292f2b; color: #e9e8e2; padding: 42px 0; }
-    .footer-row { display: flex; justify-content: space-between; gap: 30px; align-items: center; }
-    footer .brand span { color: #d6aaa0; }
-    footer p { color: #b9c0b8; font-size: 11px; line-height: 1.8; margin: 0; text-align: right; }
-    .wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 20; width: 56px; height: 56px; border-radius: 50%; background: #527b61; color: white; display: grid; place-items: center; font-size: 25px; box-shadow: 0 8px 24px #0003; }
-    .wa-float:hover { transform: translateY(-3px); }
-    @media (max-width: 800px) {
-      .wrap { width: min(100% - 36px, 600px); }
-      .nav { min-height: 68px; }
-      .menu { display: block; }
-      .links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--paper); padding: 22px; flex-direction: column; align-items: stretch; gap: 20px; border-bottom: 1px solid var(--line); }
-      .links.open { display: flex; }
-      .links .btn { text-align: center; }
-      .hero-grid, .about, .care, .location { grid-template-columns: 1fr; }
-      .hero-grid { padding-top: 60px; gap: 25px; }
-      .hero-art { min-height: 430px; }
-      .portrait-frame { height: 420px; width: min(340px,85%); }
-      .round-note { right: 0; bottom: 28px; width: 116px; height: 116px; font-size: 14px; }
-      section { padding: 76px 0; }
-      .about-art, .about-art img { min-height: 340px; }
-      .service-grid { grid-template-columns: 1fr; }
-      .care-panel { padding: 34px 26px; }
-      .trust-grid { grid-template-columns: 1fr; gap: 18px; }
-      .footer-row { flex-direction: column; align-items: flex-start; }
-      footer p { text-align: left; }
-    }
-  </style>
-</head>
-<body>
-  <div class="topline">Saúde feminina • Ginecologia • Obstetrícia • Estética íntima</div>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#inicio"><strong>Dra. Christiane Calixto</strong><span>Ginecologia & cuidado feminino</span></a>
-      <button class="menu" aria-label="Abrir menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
-      <nav class="links">
-        <a href="#sobre">A doutora</a><a href="#especialidades">Atuação</a><a href="#cuidado">Nosso cuidado</a><a href="#localizacao">Localização</a>
-        <a class="btn" href="https://wa.me/5569999946231?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20agendamento." target="_blank" rel="noopener">Agendar consulta</a>
-      </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f5f1" />
+    <meta
+      name="description"
+      content="Dra. Christiane Calixto — cuidado ginecológico, obstétrico e saúde íntima feminina em Porto Velho."
+    />
+    <title>Dra. Christiane Calixto | Cuidado feminino em todas as fases</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #292a28;
+        --muted: #70736d;
+        --cream: #f8f5f1;
+        --paper: #fffefa;
+        --rose: #bd827d;
+        --rose-dark: #98645f;
+        --sage: #89958a;
+        --line: #e9e2dc;
+        --serif: "Playfair Display", Georgia, serif;
+        --sans: "DM Sans", Arial, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        width: min(1160px, calc(100% - 48px));
+        margin: auto;
+      }
+      .topline {
+        background: #ede7e0;
+        color: #5d625a;
+        text-align: center;
+        padding: 9px 16px;
+        font-size: 11px;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(255, 254, 250, 0.94);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(233, 226, 220, 0.8);
+      }
+      .nav {
+        min-height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .brand {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.05;
+      }
+      .brand strong {
+        font-family: var(--serif);
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+      }
+      .brand span {
+        margin-top: 7px;
+        color: var(--rose-dark);
+        font-size: 9px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        font-size: 12px;
+        color: #555951;
+      }
+      .links a:hover {
+        color: var(--rose-dark);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--rose);
+        background: var(--rose);
+        color: white;
+        padding: 14px 22px;
+        border-radius: 3px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition: 0.2s;
+      }
+      .btn:hover {
+        background: var(--rose-dark);
+        border-color: var(--rose-dark);
+        transform: translateY(-1px);
+      }
+      .btn.outline {
+        background: transparent;
+        color: var(--rose-dark);
+      }
+      .btn.outline:hover {
+        background: var(--rose);
+        color: white;
+      }
+      .menu {
+        display: none;
+        border: 0;
+        background: none;
+        font-size: 25px;
+        color: var(--ink);
+      }
+      .hero {
+        background: var(--cream);
+        overflow: hidden;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.02fr 0.98fr;
+        min-height: 650px;
+        align-items: center;
+        gap: 5%;
+        padding-top: 52px;
+        padding-bottom: 52px;
+      }
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--rose-dark);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+      .eyebrow:before {
+        content: "";
+        width: 34px;
+        height: 1px;
+        background: var(--rose);
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+      h1 {
+        max-width: 590px;
+        margin: 22px 0;
+        font: 600 clamp(43px, 5.4vw, 70px)/1.08 var(--serif);
+        letter-spacing: -0.025em;
+      }
+      h1 em {
+        color: var(--rose-dark);
+        font-weight: 500;
+      }
+      .hero-copy {
+        max-width: 470px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.9;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+      .micro {
+        margin-top: 28px;
+        color: #85877f;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .hero-art {
+        position: relative;
+        min-height: 520px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .portrait-frame {
+        position: relative;
+        width: min(420px, 90%);
+        height: 510px;
+        border-radius: 210px 210px 8px 8px;
+        overflow: hidden;
+        background: linear-gradient(145deg, #d8c7bd, #b6a49a 55%, #89958a);
+        box-shadow: 0 28px 70px rgba(74, 57, 49, 0.13);
+      }
+      .portrait-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 25%;
+        display: block;
+      }
+      .portrait-frame:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 55%,
+          rgba(44, 40, 36, 0.18)
+        );
+        pointer-events: none;
+      }
+      .round-note {
+        position: absolute;
+        right: -3%;
+        bottom: 52px;
+        width: 142px;
+        height: 142px;
+        border-radius: 50%;
+        background: var(--paper);
+        border: 1px solid #e8ddd5;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 20px;
+        color: var(--rose-dark);
+        font-family: var(--serif);
+        font-size: 16px;
+        line-height: 1.25;
+        transform: rotate(7deg);
+        box-shadow: 0 12px 30px #59443a14;
+      }
+      .float-leaf {
+        position: absolute;
+        left: -2%;
+        top: 16%;
+        width: 100px;
+        height: 150px;
+        border: 1px solid #c4b2a7;
+        border-radius: 100% 0 100% 0;
+        transform: rotate(-30deg);
+        opacity: 0.6;
+      }
+      .trust {
+        border-bottom: 1px solid var(--line);
+        background: #fffefa;
+      }
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 28px 0;
+        gap: 20px;
+      }
+      .trust-item {
+        text-align: center;
+        color: #666b63;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .trust-item strong {
+        display: block;
+        color: var(--rose-dark);
+        font: 500 20px var(--serif);
+        letter-spacing: 0;
+        text-transform: none;
+        margin-bottom: 5px;
+      }
+      section {
+        padding: 105px 0;
+      }
+      .section-head {
+        max-width: 650px;
+        margin: 0 auto 48px;
+        text-align: center;
+      }
+      .section-head .eyebrow {
+        justify-content: center;
+      }
+      h2 {
+        margin: 16px 0;
+        font: 600 clamp(34px, 4vw, 48px)/1.15 var(--serif);
+        letter-spacing: -0.02em;
+      }
+      .section-head p {
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 14px;
+      }
+      .about {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 9%;
+        align-items: center;
+      }
+      .about-art {
+        min-height: 470px;
+        background: #e9e1d9;
+        position: relative;
+        overflow: hidden;
+      }
+      .about-art img {
+        width: 100%;
+        height: 100%;
+        min-height: 470px;
+        object-fit: cover;
+        display: block;
+        filter: saturate(0.78);
+      }
+      .about-art:after {
+        content: "";
+        position: absolute;
+        inset: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.75);
+        pointer-events: none;
+      }
+      .about-copy h2 {
+        margin: 18px 0;
+      }
+      .about-copy p {
+        color: var(--muted);
+        line-height: 1.95;
+        font-size: 14px;
+      }
+      .signature {
+        margin-top: 28px;
+        color: var(--rose-dark);
+        font: italic 24px var(--serif);
+      }
+      .services {
+        background: var(--cream);
+      }
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .service {
+        background: var(--paper);
+        padding: 34px 30px;
+        min-height: 255px;
+        border: 1px solid #eee7e1;
+        transition: 0.25s;
+      }
+      .service:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 40px #54433810;
+      }
+      .service-no {
+        color: var(--rose);
+        font: 500 14px var(--serif);
+      }
+      .service h3 {
+        margin: 22px 0 12px;
+        font: 600 24px var(--serif);
+      }
+      .service p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.8;
+      }
+      .care {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8%;
+        align-items: center;
+      }
+      .care-panel {
+        background: #e9e1d9;
+        padding: 52px;
+      }
+      .care-panel h2 {
+        max-width: 430px;
+      }
+      .care-panel p {
+        color: #62665e;
+        line-height: 1.9;
+        font-size: 14px;
+      }
+      .care-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .care-list li {
+        padding: 18px 0;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        gap: 16px;
+        color: #555b53;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .care-list li:before {
+        content: "✳";
+        color: var(--rose);
+      }
+      .cta {
+        background: #66766b;
+        color: white;
+        text-align: center;
+        padding: 86px 24px;
+      }
+      .cta .eyebrow {
+        color: #e7d6cb;
+        justify-content: center;
+      }
+      .cta .eyebrow:before {
+        background: #d8b8ad;
+      }
+      .cta h2 {
+        max-width: 650px;
+        margin: 18px auto;
+      }
+      .cta p {
+        max-width: 540px;
+        margin: 0 auto 28px;
+        color: #e4e8e1;
+        line-height: 1.8;
+        font-size: 14px;
+      }
+      .cta .btn {
+        background: #f8f5f1;
+        border-color: #f8f5f1;
+        color: #59695e;
+      }
+      .cta .btn:hover {
+        background: white;
+      }
+      .location {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8%;
+        align-items: center;
+      }
+      .location p {
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 14px;
+      }
+      .map-card {
+        background: #e9e5df;
+        min-height: 300px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 30px;
+        color: #66766b;
+      }
+      .map-card span {
+        display: block;
+        font-size: 34px;
+        margin-bottom: 12px;
+      }
+      footer {
+        background: #292f2b;
+        color: #e9e8e2;
+        padding: 42px 0;
+      }
+      .footer-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: center;
+      }
+      footer .brand span {
+        color: #d6aaa0;
+      }
+      footer p {
+        color: #b9c0b8;
+        font-size: 11px;
+        line-height: 1.8;
+        margin: 0;
+        text-align: right;
+      }
+      .wa-float {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 20;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #527b61;
+        color: white;
+        display: grid;
+        place-items: center;
+        font-size: 25px;
+        box-shadow: 0 8px 24px #0003;
+      }
+      .wa-float:hover {
+        transform: translateY(-3px);
+      }
+      @media (max-width: 800px) {
+        .wrap {
+          width: min(100% - 36px, 600px);
+        }
+        .nav {
+          min-height: 68px;
+        }
+        .menu {
+          display: block;
+        }
+        .links {
+          display: none;
+          position: absolute;
+          top: 68px;
+          left: 0;
+          right: 0;
+          background: var(--paper);
+          padding: 22px;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 20px;
+          border-bottom: 1px solid var(--line);
+        }
+        .links.open {
+          display: flex;
+        }
+        .links .btn {
+          text-align: center;
+        }
+        .hero-grid,
+        .about,
+        .care,
+        .location {
+          grid-template-columns: 1fr;
+        }
+        .hero-grid {
+          padding-top: 60px;
+          gap: 25px;
+        }
+        .hero-art {
+          min-height: 430px;
+        }
+        .portrait-frame {
+          height: 420px;
+          width: min(340px, 85%);
+        }
+        .round-note {
+          right: 0;
+          bottom: 28px;
+          width: 116px;
+          height: 116px;
+          font-size: 14px;
+        }
+        section {
+          padding: 76px 0;
+        }
+        .about-art,
+        .about-art img {
+          min-height: 340px;
+        }
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+        .care-panel {
+          padding: 34px 26px;
+        }
+        .trust-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .footer-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        footer p {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topline">
+      Saúde feminina • Ginecologia • Obstetrícia • Estética íntima
     </div>
-  </header>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#inicio"
+          ><strong>Dra. Christiane Calixto</strong
+          ><span>Ginecologia & cuidado feminino</span></a
+        >
+        <button
+          class="menu"
+          aria-label="Abrir menu"
+          onclick="document.querySelector('.links').classList.toggle('open')"
+        >
+          ☰
+        </button>
+        <nav class="links">
+          <a href="#sobre">A doutora</a><a href="#especialidades">Atuação</a
+          ><a href="#cuidado">Nosso cuidado</a
+          ><a href="#localizacao">Localização</a>
+          <a
+            class="btn"
+            href="https://wa.me/5569999946231?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20agendamento."
+            target="_blank"
+            rel="noopener"
+            >Agendar consulta</a
+          >
+        </nav>
+      </div>
+    </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow">Um cuidado que acolhe você</div>
-          <h1>Sua saúde merece um olhar <em>especial.</em></h1>
-          <p class="hero-copy">Cuidado ginecológico e obstétrico com escuta, atenção e respeito à individualidade de cada mulher — em todas as fases da vida.</p>
-          <div class="hero-actions">
-            <a class="btn" href="https://wa.me/5569999946231?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agende seu atendimento</a>
-            <a class="btn outline" href="#especialidades">Conheça a atuação</a>
+    <main>
+      <section class="hero" id="inicio">
+        <div class="wrap hero-grid">
+          <div>
+            <div class="eyebrow">Um cuidado que acolhe você</div>
+            <h1>Sua saúde merece um olhar <em>especial.</em></h1>
+            <p class="hero-copy">
+              Cuidado ginecológico e obstétrico com escuta, atenção e respeito à
+              individualidade de cada mulher — em todas as fases da vida.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="btn"
+                href="https://wa.me/5569999946231?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta."
+                target="_blank"
+                rel="noopener"
+                >Agende seu atendimento</a
+              >
+              <a class="btn outline" href="#especialidades"
+                >Conheça a atuação</a
+              >
+            </div>
+            <div class="micro">Atendimento em Porto Velho · Rondônia</div>
           </div>
-          <div class="micro">Atendimento em Porto Velho · Rondônia</div>
-        </div>
-        <div class="hero-art">
-          <div class="float-leaf"></div>
-          <div class="portrait-frame">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=85" alt="Imagem ilustrativa de médica em ambiente profissional">
+          <div class="hero-art">
+            <div class="float-leaf"></div>
+            <div class="portrait-frame">
+              <img
+                src="https://6afe1d6842acc5ca7b2ceadc.imgix.net/sandbox/_AMF4135_removido.png?auto=format&fit=crop&w=1000&q=85"
+                alt="Imagem ilustrativa de médica em ambiente profissional"
+              />
+            </div>
+            <div class="round-note">Cuidado com ciência e acolhimento</div>
           </div>
-          <div class="round-note">Cuidado com ciência e acolhimento</div>
+        </div>
+      </section>
+
+      <div class="trust">
+        <div class="wrap trust-grid">
+          <div class="trust-item">
+            <strong>Escuta atenta</strong>Você no centro do cuidado
+          </div>
+          <div class="trust-item">
+            <strong>Olhar integral</strong>Saúde em todas as fases
+          </div>
+          <div class="trust-item">
+            <strong>Respeito e confiança</strong>Atendimento individualizado
+          </div>
         </div>
       </div>
-    </section>
 
-    <div class="trust">
-      <div class="wrap trust-grid">
-        <div class="trust-item"><strong>Escuta atenta</strong>Você no centro do cuidado</div>
-        <div class="trust-item"><strong>Olhar integral</strong>Saúde em todas as fases</div>
-        <div class="trust-item"><strong>Respeito e confiança</strong>Atendimento individualizado</div>
+      <section id="sobre">
+        <div class="wrap about">
+          <div class="about-art">
+            <img
+              src="https://6afe1d6842acc5ca7b2ceadc.imgix.net/sandbox/_AMF4135_removido.png?auto=format&fit=crop&w=900&q=85"
+              alt="Ambiente de atendimento em saúde"
+            />
+          </div>
+          <div class="about-copy">
+            <div class="eyebrow">Conheça a profissional</div>
+            <h2>Cuidado próximo, humano e individualizado.</h2>
+            <p>
+              A Dra. Christiane Calixto atua na área de ginecologia e
+              obstetrícia, com atenção à saúde da mulher e às necessidades de
+              cada etapa da vida.
+            </p>
+            <p>
+              Mais do que oferecer atendimento, a proposta é construir uma
+              relação de confiança: ouvir, orientar com clareza e acolher cada
+              paciente com respeito, privacidade e cuidado.
+            </p>
+            <div class="signature">Dra. Christiane Calixto</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" id="especialidades">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="eyebrow">Áreas de atuação</div>
+            <h2>Um cuidado completo para a saúde feminina.</h2>
+            <p>
+              Informação, prevenção e acompanhamento individualizado para que
+              você faça escolhas conscientes sobre sua saúde.
+            </p>
+          </div>
+          <div class="service-grid">
+            <article class="service">
+              <div class="service-no">01 / GINECOLOGIA</div>
+              <h3>Saúde ginecológica</h3>
+              <p>
+                Consultas, prevenção, avaliação de sintomas e acompanhamento da
+                saúde íntima e reprodutiva da mulher.
+              </p>
+            </article>
+            <article class="service">
+              <div class="service-no">02 / OBSTETRÍCIA</div>
+              <h3>Saúde materna</h3>
+              <p>
+                Acompanhamento e orientação durante a gestação, com atenção às
+                necessidades da mulher em cada etapa.
+              </p>
+            </article>
+            <article class="service">
+              <div class="service-no">03 / ESTÉTICA ÍNTIMA</div>
+              <h3>Bem-estar íntimo</h3>
+              <p>
+                Orientação e avaliação individualizada sobre possibilidades de
+                cuidado e tratamentos da saúde e estética íntima feminina.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="cuidado">
+        <div class="wrap care">
+          <div class="care-panel">
+            <div class="eyebrow">A experiência de cuidado</div>
+            <h2>Você merece ser ouvida e acolhida.</h2>
+            <p>
+              Cada mulher tem uma história, um momento e necessidades próprias.
+              Por isso, o atendimento começa com uma conversa cuidadosa e uma
+              avaliação individual.
+            </p>
+            <a
+              class="btn"
+              href="https://wa.me/5569999946231?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20uma%20consulta."
+              target="_blank"
+              rel="noopener"
+              >Fale com a equipe</a
+            >
+          </div>
+          <ul class="care-list">
+            <li>Atendimento com respeito à privacidade e à individualidade.</li>
+            <li>Orientações claras para apoiar decisões conscientes.</li>
+            <li>Atenção à prevenção e ao acompanhamento contínuo.</li>
+            <li>
+              Avaliação personalizada antes de indicar qualquer procedimento.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="eyebrow">Dê o próximo passo</div>
+        <h2>Reserve um momento para cuidar de você.</h2>
+        <p>
+          Entre em contato com a equipe e consulte as informações sobre horários
+          e agendamentos.
+        </p>
+        <a
+          class="btn"
+          href="https://wa.me/5569999946231?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20os%20hor%C3%A1rios%20dispon%C3%ADveis."
+          target="_blank"
+          rel="noopener"
+          >Agendar pelo WhatsApp</a
+        >
+      </section>
+
+      <section id="localizacao">
+        <div class="wrap location">
+          <div>
+            <div class="eyebrow">Onde estamos</div>
+            <h2>Será um prazer receber você.</h2>
+            <p>
+              <strong>Clínica Intimavie</strong><br />Avenida Governador Jorge
+              Teixeira, 2551<br />Bairro Liberdade · Porto Velho – RO
+            </p>
+            <p>
+              Para confirmar horários, disponibilidade e orientações para sua
+              consulta, fale com nossa equipe.
+            </p>
+            <a
+              class="btn outline"
+              href="https://www.google.com/maps/search/?api=1&query=Avenida+Governador+Jorge+Teixeira+2551+Porto+Velho+RO"
+              target="_blank"
+              rel="noopener"
+              >Ver localização</a
+            >
+          </div>
+          <a
+            class="map-card"
+            href="https://www.google.com/maps/search/?api=1&query=Avenida+Governador+Jorge+Teixeira+2551+Porto+Velho+RO"
+            target="_blank"
+            rel="noopener"
+          >
+            <div>
+              <span>⌖</span><strong>Clínica Intimavie</strong><br /><small
+                >Porto Velho · Rondônia<br />Clique para abrir o mapa</small
+              >
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer-row">
+        <a class="brand" href="#inicio"
+          ><strong>Dra. Christiane Calixto</strong
+          ><span>Ginecologia & cuidado feminino</span></a
+        >
+        <p>
+          Clínica Intimavie · Porto Velho – RO<br />Conteúdo informativo. A
+          indicação de consultas e procedimentos depende de avaliação médica
+          individual.
+        </p>
       </div>
-    </div>
-
-    <section id="sobre">
-      <div class="wrap about">
-        <div class="about-art">
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85" alt="Ambiente de atendimento em saúde">
-        </div>
-        <div class="about-copy">
-          <div class="eyebrow">Conheça a profissional</div>
-          <h2>Cuidado próximo, humano e individualizado.</h2>
-          <p>A Dra. Christiane Calixto atua na área de ginecologia e obstetrícia, com atenção à saúde da mulher e às necessidades de cada etapa da vida.</p>
-          <p>Mais do que oferecer atendimento, a proposta é construir uma relação de confiança: ouvir, orientar com clareza e acolher cada paciente com respeito, privacidade e cuidado.</p>
-          <div class="signature">Dra. Christiane Calixto</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="services" id="especialidades">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">Áreas de atuação</div>
-          <h2>Um cuidado completo para a saúde feminina.</h2>
-          <p>Informação, prevenção e acompanhamento individualizado para que você faça escolhas conscientes sobre sua saúde.</p>
-        </div>
-        <div class="service-grid">
-          <article class="service"><div class="service-no">01 / GINECOLOGIA</div><h3>Saúde ginecológica</h3><p>Consultas, prevenção, avaliação de sintomas e acompanhamento da saúde íntima e reprodutiva da mulher.</p></article>
-          <article class="service"><div class="service-no">02 / OBSTETRÍCIA</div><h3>Saúde materna</h3><p>Acompanhamento e orientação durante a gestação, com atenção às necessidades da mulher em cada etapa.</p></article>
-          <article class="service"><div class="service-no">03 / ESTÉTICA ÍNTIMA</div><h3>Bem-estar íntimo</h3><p>Orientação e avaliação individualizada sobre possibilidades de cuidado e tratamentos da saúde e estética íntima feminina.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="cuidado">
-      <div class="wrap care">
-        <div class="care-panel">
-          <div class="eyebrow">A experiência de cuidado</div>
-          <h2>Você merece ser ouvida e acolhida.</h2>
-          <p>Cada mulher tem uma história, um momento e necessidades próprias. Por isso, o atendimento começa com uma conversa cuidadosa e uma avaliação individual.</p>
-          <a class="btn" href="https://wa.me/5569999946231?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20uma%20consulta." target="_blank" rel="noopener">Fale com a equipe</a>
-        </div>
-        <ul class="care-list">
-          <li>Atendimento com respeito à privacidade e à individualidade.</li>
-          <li>Orientações claras para apoiar decisões conscientes.</li>
-          <li>Atenção à prevenção e ao acompanhamento contínuo.</li>
-          <li>Avaliação personalizada antes de indicar qualquer procedimento.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="eyebrow">Dê o próximo passo</div>
-      <h2>Reserve um momento para cuidar de você.</h2>
-      <p>Entre em contato com a equipe e consulte as informações sobre horários e agendamentos.</p>
-      <a class="btn" href="https://wa.me/5569999946231?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20os%20hor%C3%A1rios%20dispon%C3%ADveis." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
-    </section>
-
-    <section id="localizacao">
-      <div class="wrap location">
-        <div>
-          <div class="eyebrow">Onde estamos</div>
-          <h2>Será um prazer receber você.</h2>
-          <p><strong>Clínica Intimavie</strong><br>Avenida Governador Jorge Teixeira, 2551<br>Bairro Liberdade · Porto Velho – RO</p>
-          <p>Para confirmar horários, disponibilidade e orientações para sua consulta, fale com nossa equipe.</p>
-          <a class="btn outline" href="https://www.google.com/maps/search/?api=1&query=Avenida+Governador+Jorge+Teixeira+2551+Porto+Velho+RO" target="_blank" rel="noopener">Ver localização</a>
-        </div>
-        <a class="map-card" href="https://www.google.com/maps/search/?api=1&query=Avenida+Governador+Jorge+Teixeira+2551+Porto+Velho+RO" target="_blank" rel="noopener">
-          <div><span>⌖</span><strong>Clínica Intimavie</strong><br><small>Porto Velho · Rondônia<br>Clique para abrir o mapa</small></div>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-row">
-      <a class="brand" href="#inicio"><strong>Dra. Christiane Calixto</strong><span>Ginecologia & cuidado feminino</span></a>
-      <p>Clínica Intimavie · Porto Velho – RO<br>Conteúdo informativo. A indicação de consultas e procedimentos depende de avaliação médica individual.</p>
-    </div>
-  </footer>
-  <a class="wa-float" href="https://wa.me/5569999946231?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Dra.%20Christiane." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">◔</a>
-</body>
+    </footer>
+    <a
+      class="wa-float"
+      href="https://wa.me/5569999946231?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Dra.%20Christiane."
+      target="_blank"
+      rel="noopener"
+      aria-label="Falar pelo WhatsApp"
+      >◔</a
+    >
+  </body>
 </html>
